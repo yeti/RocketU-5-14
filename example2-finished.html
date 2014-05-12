@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.title {
+				margin-bottom: 20px;
+				text-decoration: underline;
+			}
+
+			#mediaList li {
+				margin-bottom: 30px;
+				color: red;
+			}
+
+			#mediaContainer {
+				font-size: 20px;
+			}
+		</style>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				$("#mediaList").append('<li><img src="http://cdn.cutestpaw.com/wp-content/uploads/2012/01/I-heard-hes-good-at-coding-l.jpg"></li>');
+
+				/*
+					TODO: Hide all of the images
+
+					Hint:
+						- Google 'jquery hide'
+				*/
+				$("img").hide();
+
+				/*
+					TODO: Fade in the images for 2 seconds
+
+					Hint:
+						- Google 'jquery fadein'
+						- 2 seconds equals 2000 milliseconds
+				*/
+				$("img").fadeIn(2000);
+			})
+		</script>		
+	</head>
+
+	<body>
+		<h1 class="title">Instagram Feed</h1>
+
+		<div id="mediaContainer">
+			<ul id="mediaList">
+				<li><img src="http://www.quickmeme.com/img/22/226c4f96da89bc26fe9cc22a13118ec793d317059f3c8a4a0d8374f4ef604b22.jpg"></li>
+			</ul>
+		</div>
+	</body>
+</html>
