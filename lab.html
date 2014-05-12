@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.title {
+				margin-bottom: 20px;
+				text-decoration: underline;
+				text-align: center;
+			}
+
+			#mediaList li {
+				margin-bottom: 30px;
+				color: red;
+			}
+
+			#mediaContainer {
+				font-size: 20px;
+			}
+
+			ul {
+				width: 520px;
+				margin: 0 auto;
+			}
+
+			img {
+				width: 500px;
+			}
+
+			/*
+				TODO: Remove the styling on the list items so that the bullet points don't show
+
+				Hints:
+					- Google "Remove bullet points from list"
+			*/
+			#mediaList li {
+			    /* ? */
+			}
+
+		</style>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			/*
+				TODO: Search the instagram API documentation and replace the question mark
+				with the appropriate endpoint for getting popular media
+
+				Hints:
+					- http://instagram.com/developer/endpoints/media/
+			*/
+			var apiUrl = "https://api.instagram.com/v1/?/";
+
+			/*
+				TODO: Register at http://instagram.com/developer/ to get your client ID.
+			*/
+			data = {
+				client_id: "?"
+			}
+
+			// jQuery's function to actually make the Instagram API call
+			$.ajax({
+		      	dataType: "jsonp",
+		      	url: apiUrl,
+		      	data: data,
+		      	success: function(response) {		      		
+		        	$.each(response.data, function(index, media) {
+		        		/*
+		        			TODO: Add a list item with an image for each media item in the response
+
+			        		Hints:
+						   		- media.images.standard_resolution.url contains the image url
+						   		- Google "jQuery add image to list"
+
+						   	Bonus: Include the name and/or photo of the person who posted this media item
+						   		   as well as the text of the photo.
+
+					  		Hints:
+					   			- media.user.full_name
+				   				- media.user.profile_picture
+			   					- media.caption.text
+			   					- Be careful if text isn't filled out!
+					   	*/
+					   	$("#mediaList").append('?');
+					});
+		      	}
+		    });
+		</script>
+	</head>
+
+	<body>
+		<h1 class="title">Instagram Feed</h1>
+
+		<div id="mediaContainer">
+			<ul id="mediaList">
+
+			</ul>
+		</div>
+	</body>
+</html>
